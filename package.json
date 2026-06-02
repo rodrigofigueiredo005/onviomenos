@@ -1,0 +1,19 @@
+{
+  "name": "onviomenos",
+  "version": "1.0.0",
+  "description": "App web leve para ver e baixar holerites/informes do Domínio \"Para Você\" (super app do funcionário).",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cookie-session": "^2.1.1",
+    "dotenv": "^16.6.1",
+    "express": "^5.2.1"
+  }
+}

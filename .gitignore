@@ -1,0 +1,26 @@
+# dependências
+node_modules/
+
+# variáveis de ambiente (segredos + endpoints) — versionar só o .env.example
+.env
+.env.*
+!.env.example
+
+# build / deploy
+.vercel/
+
+# logs e temporários
+*.log
+
+# config local do Claude Code (pessoal)
+.claude/settings.local.json
+
+# macOS
+.DS_Store
+
+# artefatos de engenharia reversa (pesados / sensíveis) — não versionar
+*.apk
+_apk/
+_apktool/
+_venv/
+.playwright-mcp/
