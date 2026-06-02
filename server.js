@@ -10,6 +10,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const isProd = process.env.NODE_ENV === "production";
 
+// Atrás do proxy da Vercel o TLS termina na borda e o request chega como HTTP.
+// Sem isto, req.protocol fica "http" e a lib `cookies` recusa (silenciosamente!)
+// gravar o cookie `secure` em produção → toda sessão morre com 401.
+app.set("trust proxy", 1);
+
 app.use(express.json());
 // Sessão guardada no próprio cookie (assinado) — stateless, funciona em serverless
 // (Vercel/Cloudflare), onde não há memória persistente entre invocações.
